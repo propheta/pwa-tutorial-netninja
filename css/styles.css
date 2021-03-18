@@ -21,11 +21,11 @@ nav .sidenav-trigger{
   margin: 0;
 }
 
-/* recipe styles */
-.recipes{
+/* car styles */
+.car{
   margin-top: 20px;
 }
-.card-panel.recipe{
+.card-panel.car{
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0px 1px 3px rgba(90,90,90,0.1);
@@ -34,27 +34,27 @@ nav .sidenav-trigger{
   grid-template-areas: "image details delete";
   position: relative;
 }
-.recipe img{
+.car img{
   grid-area: image;
   max-width: 60px;
 }
-.recipe-details{
+.car-details{
   grid-area: details;
   margin-top: 6px;
 }
-.recipe-delete{
+.car-delete{
   grid-area: delete;
   position: absolute;
   bottom: 0px;
   right: 0px;
 }
-.recipe-delete i{
+.car-delete i{
   font-size: 18px;
 }
-.recipe-title{
+.car-title{
   font-weight: bold;
 }
-.recipe-ingredients{
+.car-data{
   font-size: 0.8em;
 }
 
