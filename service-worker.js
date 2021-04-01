@@ -50,7 +50,7 @@ self.addEventListener('activate', event => {
 
 // fetch event
 self.addEventListener('fetch', event => {
-    event.respondWith(
+    /*event.respondWith(
         caches.match(event.request).then(cacheResponse => {
             return cacheResponse || fetch(event.request).then(fetchResponse => {
                 return caches.open(dynamicCacheName).then(cache => {
@@ -65,5 +65,5 @@ self.addEventListener('fetch', event => {
                 return caches.match('/pages/fallback.html');
             }   
         })
-    );
+    );*/
 });

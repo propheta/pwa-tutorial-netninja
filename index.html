@@ -39,51 +39,8 @@
   </ul>
 
   <!-- cars -->
-  <div class="car container grey-text text-darken-1">
-    <div class="card-panel car white row">
-      <img src="/img/car.png" alt="car thumb">
-      <div class="car-details">
-        <div class="car-title">1HGBH41JXMN109186</div>
-        <div class="car-data">Deck: -1</div>
-        <div class="car-data">Hold: A</div>
-      </div>
-      <div class="car-delete">
-        <i class="material-icons">delete_outline</i>
-      </div>
-    </div>
-    <div class="card-panel car white row">
-      <img src="/img/car.png" alt="car thumb">
-      <div class="car-details">
-        <div class="car-title">1HGBH41JXMN109187</div>
-        <div class="car-data">Deck: -1</div>
-        <div class="car-data">Hold: A</div>
-      </div>
-      <div class="car-delete">
-        <i class="material-icons">delete_outline</i>
-      </div>
-    </div>
-    <div class="card-panel car white row">
-      <img src="/img/car.png" alt="car thumb">
-      <div class="car-details">
-        <div class="car-title">1HGBH41JXMN109188</div>
-        <div class="car-data">Deck: -1</div>
-        <div class="car-data">Hold: A</div>
-      </div>
-      <div class="car-delete">
-        <i class="material-icons">delete_outline</i>
-      </div>
-    </div>
-    <div class="card-panel car white row">
-      <img src="/img/car.png" alt="car thumb">
-      <div class="car-details">
-        <div class="car-title">1HGBH41JXMN109189</div>
-        <div class="car-data">Deck: -1</div>
-        <div class="car-data">Hold: A</div>
-      </div>
-      <div class="car-delete">
-        <i class="material-icons">delete_outline</i>
-      </div>
-    </div>
+  <div class="cars container grey-text text-darken-1">
+    
   </div>
 
   <div class="center">
@@ -115,7 +72,31 @@
     </form>
   </div>
 
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAu6rFf_jL7or3RB5-ucETmCJMHuU1NpPs",
+      authDomain: "navipor-sio-2.firebaseapp.com",
+      projectId: "navipor-sio-2",
+      storageBucket: "navipor-sio-2.appspot.com",
+      messagingSenderId: "656587205835",
+      appId: "1:656587205835:web:769e2e8e5b9655d648ff4e"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+
   <script src="/js/app.js"></script>
+  <script src="/js/db.js"></script>
   <script src="/js/ui.js"></script>
 </body>
 </html>
