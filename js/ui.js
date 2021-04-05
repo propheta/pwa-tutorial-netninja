@@ -26,3 +26,8 @@ const renderCar = (data, id) => {
 
   cars.innerHTML += html;
 }
+
+const removeCar = (id) => {
+  const car = document.querySelector(`.car[data-id=${id}]`);
+  car.remove();
+};

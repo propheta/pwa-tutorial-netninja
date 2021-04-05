@@ -1,5 +1,5 @@
-const staticCacheName = 'site-static-v2';
-const dynamicCacheName = 'site-dynamic-v1';
+const staticCacheName = 'site-static-v7';
+const dynamicCacheName = 'site-dynamic-v7';
 const assets = [
     '/',
     '/index.html',
@@ -50,20 +50,22 @@ self.addEventListener('activate', event => {
 
 // fetch event
 self.addEventListener('fetch', event => {
-    /*event.respondWith(
-        caches.match(event.request).then(cacheResponse => {
-            return cacheResponse || fetch(event.request).then(fetchResponse => {
-                return caches.open(dynamicCacheName).then(cache => {
-                    cache.put(event.request.url, fetchResponse.clone());
-                    limitCacheSize(dynamicCacheName, 15);
-                    return fetchResponse;
-                })
-            });
-        //falback page
-        }).catch(() => {
-            if(event.request.url.indexOf('.html') > -1){
-                return caches.match('/pages/fallback.html');
-            }   
-        })
-    );*/
+    if(event.request.url.indexOf('firestore.googleapis.com') === -1){
+        event.respondWith(
+            caches.match(event.request).then(cacheResponse => {
+                return cacheResponse || fetch(event.request).then(fetchResponse => {
+                    return caches.open(dynamicCacheName).then(cache => {
+                        cache.put(event.request.url, fetchResponse.clone());
+                        limitCacheSize(dynamicCacheName, 15);
+                        return fetchResponse;
+                    })
+                });
+            //falback page
+            }).catch(() => {
+                if(event.request.url.indexOf('.html') > -1){
+                    return caches.match('/pages/fallback.html');
+                }   
+            })
+        );
+    }
 });
